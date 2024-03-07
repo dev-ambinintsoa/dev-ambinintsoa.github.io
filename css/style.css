@@ -2759,12 +2759,21 @@ body.dark .loader_line:after{
 	text-align: center;
 	width: 100%;
 	z-index: 2;
+}
+
+.form-overlay-text span {
 	color: var(--main-color);
 	list-style: none;
 	text-transform: uppercase;
 	font-weight: 300;
 	letter-spacing: 5px;
 	font-size: 30px;
+}
+
+.form-overlay-text a {
+	color: var(--main-color);
+	list-style: none;
+	font-weight: 300;
 }
 
 
