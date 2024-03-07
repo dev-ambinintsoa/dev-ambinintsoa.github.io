@@ -526,73 +526,90 @@ body.dark .loader_line:after{
 	line-height: 1;
 	margin-bottom: 22px;
 }
-.know_tm_hero .text{
-	font-size: 24px;
-	margin-bottom: 27px;
+.know_tm_hero .text {
+	display: inline-flex;
 }
-.know_tm_video{
-	width: auto;
-	height: auto;
-	clear: both;
-	float: left;
+.know_tm_hero .text p {
+	color: var(--white-color);
+	list-style: none;
+	text-transform: uppercase;
+	font-weight: 300;
+	letter-spacing: 5px;
+	font-size: 40px;
+}
+
+.know_tm_hero .dynamic-text span{
 	position: relative;
-	z-index: 2;
+	color: var(--main-color);
 }
-.know_tm_video .video_inner{
-	display: inline-block;
-	display: flex;
+
+.know_tm_hero .dynamic-text span::before {
+	content: "Web developer";
+	color: var(--main-color);
+	animation: word 9s infinite;
+}
+
+.know_tm_hero .dynamic-text span::after{
+	content: "";
+	position: absolute;
+	background: #34353a;
+	height: 100%;
+	width: calc(100% + 10px);
+	right: -10px;
+	border-left: 2px solid var(--main-color) ;
+	animation: cursor .8s infinite, typing 9s infinite;
+}
+
+@keyframes word {
+	0%, 33% {
+		content: "Web developer";
+	}
+	34%,63% {
+	content: "Web designer";
+	}
+	64%,100% {
+	content: "Freelancer";
+	}
+}
+
+@keyframes cursor {
+	to {
+		border-left: 2px solid #34353a;
+	}
+}
+
+@keyframes typing {
+	10%,15%,40%,45%,70%,75%{
+		width: 0;
+	}
+	5%,30%,35%,60%,65%{
+		width: calc(100% + 10px);
+	}
+}
+
+.social-media a {
+	display: inline-flex;
+	justify-content: center;
 	align-items: center;
-	position: relative;
+	width: 4rem;
+	height: 4rem;
+	background: transparent;
+	text-decoration: none;
+	border: .2rem solid var(--main-color);
+	border-radius: 50%;
+	box-shadow: 0 .2rem .5rem var(--shadow-color) ;
+	font-size: 2rem;
+	color: var(--main-color);
+	margin: 2.5rem 1.5rem 3rem 0;
+	transition: .5s ease;
 }
-.know_tm_video .circle{
-	width: 72px;
-	height: 72px;
-	background-color: var(--secondary-color);
-	border-radius: 100%;
-	position: relative;
+
+.social-media a:hover {
+	background: var(--main-color);
+	color: var(--white-color);
 }
-.know_tm_video .circle:before{
-	position: absolute;
-	content: "";
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 8px 0 8px 14px;
-    border-color: transparent transparent transparent #fff;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-	margin-left: 3px;
-}
-.know_tm_video .play{
-	font-size: 24px;
-	font-weight: 700;
-	padding-left: 28px;
-}
-.know_tm_video .circle:after{
-	position: absolute;
-	content: "";
-	top: 1px;
-	bottom: 1px;
-	left: 1px;
-	right: 1px;
-	border-radius: 100%;
-	background-color: rgba(0,0,0,.03);
-	z-index: -1;
-	
-	-webkit-transition: all .3s ease;
-	   -moz-transition: all .3s ease;
-	    -ms-transition: all .3s ease;
-	     -o-transition: all .3s ease;
-	        transition: all .3s ease;
-}
-.know_tm_video:hover .circle:after{
-	top: -9px;
-	bottom: -9px;
-	left: -9px;
-	right: -9px;
-}
+
+
 .know_tm_full_link{
 	position: absolute;
 	top: 0px;
