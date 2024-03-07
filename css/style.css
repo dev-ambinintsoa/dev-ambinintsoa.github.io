@@ -609,21 +609,6 @@ body.dark .loader_line:after{
 	color: var(--white-color);
 }
 
-.libutton {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	padding: 7px;
-	text-align: center;
-	outline: none;
-	text-decoration: none !important;
-	color: #ffffff !important;
-	width: 200px;
-	height: 32px;
-	border-radius: 16px;
-	background-color: #0A66C2;
-	font-family: "SF Pro Text", Helvetica, sans-serif;
-}
 
 
 .know_tm_full_link{
@@ -2745,9 +2730,49 @@ body.dark .loader_line:after{
 .know_tm_contact .wrapper .left ul li .list_inner .short span a:hover{
 	color: var(--main-color);
 }
+
 .know_tm_contact .wrapper .right{
 	width: 65%;
+	position: relative;
 }
+
+.form-overlay {
+	position: relative;
+	/* Add blur effect to the entire container */
+	filter: blur(5px);
+}
+
+.form-overlay::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+	z-index: 1;
+}
+
+.form-overlay-text {
+	position: absolute;
+	align-items: center;
+	text-align: center;
+	width: 100%;
+	z-index: 2;
+	color: var(--main-color);
+	list-style: none;
+	text-transform: uppercase;
+	font-weight: 300;
+	letter-spacing: 5px;
+	font-size: 30px;
+}
+
+
+.form-overlay * {
+	pointer-events: none;
+}
+
+
 .know_tm_contact .wrapper .right .fields{
 	width: 100%;
 	height: auto;
