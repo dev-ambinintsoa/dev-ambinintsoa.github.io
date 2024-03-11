@@ -4138,5 +4138,6 @@ input[type=number] {
 @media (max-height: 988px){
 	.know_tm_hero .dynamic-text span::after{
 		filter: blur(2px);
+		bottom: 0;
 	}
 }
